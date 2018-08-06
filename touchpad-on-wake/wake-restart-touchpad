@@ -1,0 +1,10 @@
+#!/bin/sh
+case $1/$2 in
+  post/*)
+    echo "Waking up from $2..."
+    # Place your post suspend (resume) commands here, or `exit 0` if no post suspend action required
+    modprobe -r psmouse
+    sleep 1
+    modprobe psmouse
+    ;;
+esac
